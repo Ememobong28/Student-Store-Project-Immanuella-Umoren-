@@ -6,20 +6,45 @@ import Home from "../Home/Home"
 import Hero from "../Hero/Hero"
 import "./App.css"
 import Search from "../Search/Search"
+import { useState, useEffect } from "react";
+import Product from "../Product/Product"
 
 export default function App() {
+  const [products, setProducts] = useState([ ]);
+
+  useEffect(() => {
+    // Function to fetch products from the API
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("https://codepath-store-api.herokuapp.com/store"); // Replace with your API endpoint
+        const data = await response.json();
+        setProducts(data.products);
+        console.log(data)
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+
   return (
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
           <Home />
           <Hero />
-          <Search />
+          <Search products={products} />
+          <div className="product-grid">
+            {products.map((product) => (
+              <Product key={product.id} product={product} />
+            ))}
+          </div>
         </main>
       </BrowserRouter>
     </div>
-  )
+  );
 }

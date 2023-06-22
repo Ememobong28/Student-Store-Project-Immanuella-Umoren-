@@ -4,7 +4,7 @@
     height: 100vh;
     padding: 20px; 
     position: fixed;
-    display: flex;
+    
     border-right: solid 1px white;
     z-index: 100;
     flex-direction: column;
