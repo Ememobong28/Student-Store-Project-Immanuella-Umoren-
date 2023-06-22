@@ -1,0 +1,15 @@
+.herogit {
+    background-color: #02c385;
+    width: 60%;
+    max-width: 100vw;
+    height: 200px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 350px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: center;
+  }
+  

@@ -1,0 +1,29 @@
+.sidebar {
+    background-color: #2b4047; 
+    width: 60px; 
+    height: 100vh;
+    padding: 20px; 
+    position: fixed;
+    display: flex;
+    border-right: solid 1px white;
+    z-index: 100;
+    flex-direction: column;
+    top: 0px;
+    /* Add other relevant styles for the sidebar */
+  }
+  
+  .sidebar-heading {
+    color: #fff; /* Text color */
+    font-size: 20px; /* Adjust the font size as needed */
+    margin-bottom: 20px; /* Add spacing between the heading and the content */
+    /* Add other relevant styles for the sidebar heading */
+  }
+  
+  .sidebar-link {
+    color: #fff; /* Text color */
+    font-size: 16px; /* Adjust the font size as needed */
+    text-decoration: none; /* Remove underline */
+    margin-bottom: 10px; /* Add spacing between the links */
+    /* Add other relevant styles for the sidebar links */
+  }
+  
