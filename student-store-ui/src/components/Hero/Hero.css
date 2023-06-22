@@ -1,15 +1,62 @@
-.herogit {
-    background-color: #02c385;
-    width: 60%;
-    max-width: 100vw;
-    height: 200px;
-    margin-top: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 350px;
-    justify-content: space-between;
-    box-sizing: border-box;
-    position: center;
-  }
-  
+.hero {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #02c385;
+	padding: 2rem 3rem;
+  padding-right: 9rem;
+	color: white;
+  position: absolute;
+  top:60px;
+  left: 0; 
+	right: 0;
+}
+
+.hero-container {
+	padding: 20px;
+	max-width: 800px;
+}
+
+.hero-intro {
+	font-size: 4rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.hero-desc {
+	max-width: 60ch;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+.hero-image {
+	width: 125px;
+	height: 125px;
+	margin-top: 20px;
+  margin-left: 3rem;
+}
+
+@media (max-width: 768px) {
+	.hero {
+		padding: 10px;
+	}
+
+	.hero-container {
+		max-width: 100%;
+	}
+
+	.hero-intro {
+		font-size: 3rem;
+	}
+
+	.hero-desc {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.hero {
+		flex-direction: column;
+	}
+}
