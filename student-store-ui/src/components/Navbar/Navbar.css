@@ -48,6 +48,29 @@
     font-family: "Montserrat", sans-serif;
 }
 
+@media screen and (max-width: 1290px) {
+	.navbar {
+		flex-direction: column;
+	}
+	.nav-socials {
+		position: relative;
+		left: 0px;
+	}
+	.nav-links {
+		position: relative;
+		right: 0;
+		margin-right: 0;
+		gap: 50px;
+	}
+}
+
+@media screen and (min-width: 1290px) and (max-width: 1512px) {
+	.nav-socials {
+		position: relative;
+		left: -60px;
+	}
+}
+
 
   
 

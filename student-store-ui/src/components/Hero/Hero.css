@@ -5,12 +5,8 @@
 	align-items: center;
 	background-color: #02c385;
 	padding: 2rem 3rem;
-  padding-right: 9rem;
+    padding-right: 9rem;
 	color: white;
-  position: absolute;
-  top:60px;
-  left: 0; 
-	right: 0;
 }
 
 .hero-container {
@@ -34,7 +30,7 @@
 	width: 125px;
 	height: 125px;
 	margin-top: 20px;
-  margin-left: 3rem;
+    margin-left: 3rem;
 }
 
 @media (max-width: 768px) {
