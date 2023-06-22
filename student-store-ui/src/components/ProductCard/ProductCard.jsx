@@ -12,14 +12,14 @@ export default function ProductCard({ product }) {
       
       
       <div className="quantity-controls">
-      <h3>{product.name}</h3>
+      <p>{product.name}</p>
         <HiOutlineMinus className="sign minus" onClick={() => removeFromCart(product.id)} />
-        <span className="quantity">1</span>
+        <span className="quantity">0</span>
         <HiOutlinePlus className="sign plus" onClick={() => addToCart(product)} />
       </div>
       <p className="product-price">${product.price.toFixed(2)}</p>
       <div className="stars">
-        <img src="/stars.png" alt="stars" />
+        <img src="/Stars.png" alt="stars" />
       </div>
     </div>
   );

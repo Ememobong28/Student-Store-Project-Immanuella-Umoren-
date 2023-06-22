@@ -10,13 +10,13 @@ export default function Hero() {
 					<br />
 					Find Your Merch!
 				</div>
-				<p className="hero-desc">
+				<p className="hero-description">
 					We have all kinds of goodies. Click on any of the items to
 					start filling up your shopping cart. Checkout whenever
 					you're ready.
 				</p>
 			</div>
-			<img className="hero-image" src="/hero-img.png" alt="logo" />
+			<img className="hero-image" src="/House Logo.png" alt="logo" />
 		</nav>
 	)
 }

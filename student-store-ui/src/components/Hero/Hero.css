@@ -20,17 +20,17 @@
 	margin-bottom: 10px;
 }
 
-.hero-desc {
+.hero-description {
 	max-width: 60ch;
 	font-size: 20px;
 	line-height: 1.5;
 }
 
 .hero-image {
-	width: 125px;
-	height: 125px;
+	width: 175px;
+	height: 175px;
 	margin-top: 20px;
-    margin-left: 3rem;
+  margin-left: 3rem;
 }
 
 @media (max-width: 768px) {

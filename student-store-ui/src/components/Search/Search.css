@@ -2,29 +2,32 @@
     margin-right: 20px;
     display: flex;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
     
   }
   
 input[type="text"] {
-    width: 450px;
+    width: 650px;
+    height: 35px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
   
-.search-button {
+.searchBtn {
     background-color: green;
     color: white;
     border: none;
     padding: 10px;
+    margin-top: 30px;
     margin-left: 10px;
     border-radius: 4px;
     cursor: pointer;
+    height: 35px;
   }
   
-.search-button:hover {
+.searchBtn:hover {
     opacity: 0.8;
   }
   

@@ -25,7 +25,7 @@ export default function Search() {
           value={searchQuery}
           onChange={handleSearchInputChange}
         />
-        <button type="submit">Search</button>
+        <button className="searchBtn" type="submit">Search</button>
       </form>
     </div>
   );
