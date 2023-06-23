@@ -1,46 +1,31 @@
-// import React from 'react';
-// import ProductCard from '../ProductCard/ProductCard';
-// import './ProductGrid.css';
-
-// export default function ProductGrid({ products }) {
-//     console.log(products);
-//   return (
-//     <div className="product-grid">
-//         <h3 className="product-heading">Best Selling Products</h3>
-//         <div className="grid-container">
-//         {products.map((product) => (
-//         <ProductCard key={product.id} product={product} />
-//       ))}
-//         </div>
-        
-      
-//     </div>
-//   );
-// }
-
 import React from 'react';
-import { AiOutlineLoading } from "react-icons/ai";
-import "./ProductGrid.css";
+import './ProductGrid.css';
 import ProductCard from '../ProductCard/ProductCard';
 
-const ProductGrid = ({ products }) => {
+const ProductGrid = ({ products, searchResults, selectedCategory }) => {
+  const filteredProducts = searchResults || products;
+
+  // Filter products based on the selected category
+  const filteredByCategory =
+    selectedCategory && selectedCategory !== 'All'
+      ? filteredProducts.filter((product) => product.category === selectedCategory)
+      : filteredProducts;
+
   return (
-    <>
-      <h3 className="product-heading">Best Selling Products</h3>
+    <div>
+       <h3 className="product-heading">Best Selling Products</h3>
       <div className="product-grid">
-        {products.length > 0 ? (
-          products.map((product, i) => (
-            <ProductCard product={product} key={i} />
-          ))
-        ) : (
-          <div className="loading-spinner">
-            <AiOutlineLoading className="spinner" />
-          </div>
-        )}
-      </div>
-    </>
+      {filteredByCategory && filteredByCategory.length > 0 ? (
+        filteredByCategory.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))
+      ) : (
+        <div className="no-products-message">No products available.</div>
+      )}
+    </div>
+  </div>
+    
   );
 };
 
 export default ProductGrid;
-

@@ -1,11 +1,10 @@
 import React from 'react';
 import './ProductCard.css';
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
-// import { ProductContext } from "../../state/ProductContext";
 
 
-export default function ProductCard({ product }) {
-    // const { addToCart, removeFromCart } = useContext(ProductContext)
+export default function ProductCard({ product  , removeFromCart, addToCart}) {
+   
   return (
     <div className="product-card">
       <img src={product.image} alt={product.name} />

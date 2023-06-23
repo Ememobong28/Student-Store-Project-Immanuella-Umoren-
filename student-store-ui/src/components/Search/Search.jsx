@@ -1,32 +1,33 @@
 import React, { useState } from "react";
-import "./Search.css"
+import "./Search.css";
 
-export default function Search() {
+const SearchBar = ({ handleSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearchInputChange = (e) => {
-    setSearchQuery(e.target.value);
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value);
   };
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    // Perform search or any other desired action with the searchQuery
-    console.log("Search query:", searchQuery);
-    // Reset the search query
-    setSearchQuery("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleSearch(searchQuery);
   };
 
   return (
     <div className="search">
-      <form onSubmit={handleSearchSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search for products 😀"
           value={searchQuery}
-          onChange={handleSearchInputChange}
+          onChange={handleChange}
         />
-        <button className="searchBtn" type="submit">Search</button>
+        <button className="searchBtn" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
-}
+};
+
+export default SearchBar;
