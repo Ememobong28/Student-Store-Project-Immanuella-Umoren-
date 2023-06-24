@@ -20,7 +20,7 @@ const SubNavbar = ({ handleCategoryClick }) => {
           </div>
         </div>
         <nav className={`sub-navbar-links ${isOpen ? 'open' : ''}`}>
-          <ul>
+          <ul className='categories'>
             <li>
               <button onClick={() => handleCategoryClick("Clothing")}>Clothing</button>
             </li>

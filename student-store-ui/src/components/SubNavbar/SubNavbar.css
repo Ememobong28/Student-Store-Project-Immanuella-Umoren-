@@ -1,14 +1,17 @@
 /* SubNavbar.css */
+.categories{
+  gap: 120px;
+}
 .sub-navbar {
   position: sticky;
   width: 100%;
   height: 60px;
   background-color: transparent;
   z-index: 1000;
+  top: 0;
   transition: background-color 0.3s ease-in-out;
-  margin-top: 50px;
-  
-
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .sub-navbar.open {
@@ -17,6 +20,7 @@
 
 .sub-navbar-menu {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 100%;
   padding: 0 20px;
@@ -25,9 +29,9 @@
 
 .sub-navbar-hamburger {
   cursor: pointer;
-  /* display: flex; */
+  display: flex;
   align-items: center;
-  margin-right: 20px;
+ 
 }
 
 .hamburger {
@@ -36,15 +40,16 @@
   justify-content: space-between;
   width: 20px;
   height: 16px;
-  margin-right: 10px;
+
 }
 
 .hamburger span {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #000000; /* Change to desired hamburger color */
+  background-color: gray; /* Change to desired hamburger color */
   transition: transform 0.3s ease-in-out;
+  margin-left: -40px;
 }
 
 .hamburger.open span:first-child {
@@ -91,6 +96,23 @@
   transition: color 0.3s ease-in-out;
 }
 
-.sub-navbar-links ul li button:hover {
-  color: #ff0000; /* Change to desired link hover color */
+.sub-navbar-links ul li {
+  position: relative;
 }
+
+.sub-navbar-links ul li::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: transparent;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.sub-navbar-links ul li:hover::after {
+  width: 100%;
+  background-color: #02c385; /* Change to desired line color */
+}
+
