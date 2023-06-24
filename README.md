@@ -12,7 +12,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ## *Week 2* Application Features
 
-Walkthrough Video: 
+Walkthrough Video: https://www.loom.com/share/e2f05e5e10574c248c08deeab493e365?sid=eab57c64-1584-4f84-bb80-bc0b12bc4aeb 
 
 ### Core Features
 
