@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "../Navbar/Navbar";
 import Home from "../Home/Home";
 import "./App.css";
+import Sidebar from "../Sidebar/Sidebar";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -28,6 +29,7 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
+          <Sidebar />
           <div className="body">
             <Routes>
               <Route path="/" element={<Home products={products} />} />
