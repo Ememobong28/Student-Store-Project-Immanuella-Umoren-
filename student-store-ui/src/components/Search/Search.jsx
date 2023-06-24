@@ -13,18 +13,37 @@ const SearchBar = ({ handleSearch }) => {
     handleSearch(searchQuery);
   };
 
+  const handleClear = () => {
+    setSearchQuery("");
+    handleSearch(""); // Reset the search results
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit(event);
+    }
+  };
+
   return (
     <div className="search">
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search for products 😀"
-          value={searchQuery}
-          onChange={handleChange}
-        />
-        <button className="searchBtn" type="submit">
-          Search
-        </button>
+        <div className="searchInput">
+          <input
+            type="text"
+            placeholder="Search for products 😀"
+            value={searchQuery}
+            onChange={handleChange}
+            onKeyPress={handleKeyPress} // Handle key press event on the input field
+          />
+          {searchQuery && (
+            <button className="clearBtn" onClick={handleClear}>
+              X
+            </button>
+          )}
+          <button className="searchBtn" type="submit">
+            Search
+          </button>
+        </div>
       </form>
     </div>
   );
