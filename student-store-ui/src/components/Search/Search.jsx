@@ -33,7 +33,7 @@ const SearchBar = ({ handleSearch }) => {
             placeholder="Search for products 😀"
             value={searchQuery}
             onChange={handleChange}
-            onKeyPress={handleKeyPress} // Handle key press event on the input field
+            onKeyPress={handleKeyPress}
           />
           {searchQuery && (
             <button className="clearBtn" onClick={handleClear}>

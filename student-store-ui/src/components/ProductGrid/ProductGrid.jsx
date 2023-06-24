@@ -5,7 +5,6 @@ import ProductCard from '../ProductCard/ProductCard';
 const ProductGrid = ({ products, searchResults, selectedCategory }) => {
   const filteredProducts = searchResults || products;
 
-  // Filter products based on the selected category
   const filteredByCategory =
     selectedCategory && selectedCategory !== 'All categories'
       ? filteredProducts.filter((product) => product.category === selectedCategory.toLowerCase()

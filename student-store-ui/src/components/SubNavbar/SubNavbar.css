@@ -1,4 +1,3 @@
-/* SubNavbar.css */
 .categories{
   gap: 120px;
 }
@@ -12,10 +11,11 @@
   transition: background-color 0.3s ease-in-out;
   margin-left: 20px;
   margin-top: 20px;
+  
 }
 
 .sub-navbar.open {
-  background-color: #ffffff; /* Change to desired background color when menu is open */
+  background-color: #f7f7f7;
 }
 
 .sub-navbar-menu {
@@ -47,7 +47,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-color: gray; /* Change to desired hamburger color */
+  background-color: gray;
   transition: transform 0.3s ease-in-out;
   margin-left: -40px;
 }
@@ -91,7 +91,7 @@
   background-color: transparent;
   border: none;
   font-size: 16px;
-  color: #000000; /* Change to desired link color */
+  color: #000000;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
@@ -113,6 +113,6 @@
 
 .sub-navbar-links ul li:hover::after {
   width: 100%;
-  background-color: #02c385; /* Change to desired line color */
+  background-color: #02c385; 
 }
 

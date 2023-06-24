@@ -1,4 +1,3 @@
-// home.jsx
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Hero from "../Hero/Hero";
@@ -11,7 +10,6 @@ import SearchBar from "../Search/Search";
 import SubNavbar from "../SubNavbar/SubNavbar";
 import { useParams } from 'react-router-dom';
 import ProductDetails from "../ProductDetails/ProductDetails";
-
 
 export default function Home({ products }) {
   const [selectedCategory, setSelectedCategory] = useState(null);

@@ -7,6 +7,7 @@
   flex-direction: row;
   overflow-x: hidden;
   position: relative;
+  background-color: #f7f7f7;
 }
 
 .app main {
@@ -33,10 +34,3 @@
   padding-bottom: 2rem;
   border-right: solid 1px white;
 }
-
-
-/* @media screen and (max-width: 1222px) {
-	.app {
-    margin-left: 2rem;
-	}
-} */

@@ -25,7 +25,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <img className="contact-img" src="/Happy Person.png" alt="happy person" />
+      <img className="contact-img" src="/Happy-girl.png" alt="happy person" />
     </div>
     </>
   )

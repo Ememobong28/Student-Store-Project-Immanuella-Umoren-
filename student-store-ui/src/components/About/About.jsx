@@ -8,13 +8,13 @@ export default function About() {
       <div className="about-container">
         <div className="about-description">
           <p>
-            The CodePath Student Store offers a wide range of products at affordable prices, curated by our dedicated team with a passion for quality.
+            The CodePath Student Store offers great products at great price from a great team and for a great cause.
           </p>
           <p>
-            We have carefully selected items that cater to the diverse interests of students, ensuring there's something for everyone in one convenient place.
+            We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.
           </p>
           <p>
-            All proceeds from your purchases contribute to providing high-quality CS education to college students across the country.
+            All proceeds go towards bringing high quality CS education to college students around the country.
           </p>
         </div>
         <div className="about-image-container">
