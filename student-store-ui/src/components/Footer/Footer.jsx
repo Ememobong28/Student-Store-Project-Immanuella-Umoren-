@@ -68,7 +68,7 @@ const Footer = () => {
           <div>
               <h4>Our App</h4>
               <div>
-                <img className='footer-stores' src="/stores.png" alt="google/apple store" />
+                <img className='footer-stores' src="/google play.png" alt="google/apple store" />
               </div>
           </div>
         </div>

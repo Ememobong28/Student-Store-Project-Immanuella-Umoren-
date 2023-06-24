@@ -1,27 +1,96 @@
-/* .sub-navbar {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-    padding: 10px;
-  }
+/* SubNavbar.css */
+.sub-navbar {
+  position: sticky;
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 50px;
   
-  .sub-navbar-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:transparent;
-  }
-  
-  .sub-navbar-hamburger {
-    /* Styles for the hamburger icon */
-  /* }
-  
-  .sub-navbar-link {
-    margin-left: 10px;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-  }
-   */ 
+
+}
+
+.sub-navbar.open {
+  background-color: #ffffff; /* Change to desired background color when menu is open */
+}
+
+.sub-navbar-menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  margin-right: 80px;
+}
+
+.sub-navbar-hamburger {
+  cursor: pointer;
+  /* display: flex; */
+  align-items: center;
+  margin-right: 20px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000000; /* Change to desired hamburger color */
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger.open span:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:last-child {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.sub-navbar-links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.sub-navbar-links.open {
+  opacity: 1;
+}
+
+.sub-navbar-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.sub-navbar-links ul li {
+  margin-right: 10px;
+}
+
+.sub-navbar-links ul li button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #000000; /* Change to desired link color */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.sub-navbar-links ul li button:hover {
+  color: #ff0000; /* Change to desired link hover color */
+}

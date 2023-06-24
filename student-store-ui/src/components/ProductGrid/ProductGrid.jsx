@@ -7,8 +7,9 @@ const ProductGrid = ({ products, searchResults, selectedCategory }) => {
 
   // Filter products based on the selected category
   const filteredByCategory =
-    selectedCategory && selectedCategory !== 'All'
-      ? filteredProducts.filter((product) => product.category === selectedCategory)
+    selectedCategory && selectedCategory !== 'All categories'
+      ? filteredProducts.filter((product) => product.category === selectedCategory.toLowerCase()
+      )
       : filteredProducts;
 
   return (

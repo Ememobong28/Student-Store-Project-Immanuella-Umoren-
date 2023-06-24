@@ -1,5 +1,6 @@
+// app.jsx
 import React, { useState, useEffect } from "react";
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "../Navbar/Navbar";
 import Home from "../Home/Home";
 import "./App.css";
@@ -22,14 +23,17 @@ export default function App() {
     fetchProducts();
   }, []);
 
-  
-
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           <Navbar />
-          <Home products={products} />
+          <div className="body">
+            <Routes>
+              <Route path="/" element={<Home products={products} />} />
+              <Route path="/product/:id" element={<Home products={products} />} />
+            </Routes>
+          </div>
         </main>
       </BrowserRouter>
     </div>
