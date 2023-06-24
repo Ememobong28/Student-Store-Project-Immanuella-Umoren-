@@ -83,6 +83,10 @@
 	gap: 20px;
 }
 
+.quantity{
+	margin-top: 3px;
+}
+
 .product-card {
 	width: 240px;
 	height: 300px;
