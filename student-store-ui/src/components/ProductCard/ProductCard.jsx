@@ -41,7 +41,10 @@ export default function ProductCard({ product  , removeFromCart, addToCart}) {
           }}
         />
       </div>
-      
+      <p className='product-price'>${product.price}</p>
+      <div className="product-stars">
+        <img src="/Stars.png" alt="stars" />
+    </div>
     </div>
   );
 }

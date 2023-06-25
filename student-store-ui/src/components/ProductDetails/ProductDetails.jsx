@@ -13,6 +13,7 @@ export default function ProductDetails({ product }) {
       <p>Name: {product.name}</p>
       <img src={product.image} alt={product.name} />
       <p>Description: {product.description}</p>
+      <p>Price: {product.price}</p>
       <div className="product-stars">
         <img src="/Stars.png" alt="stars" />
     </div>
