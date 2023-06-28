@@ -1,8 +1,12 @@
 import React, { useState } from "react"
-import { MdAddShoppingCart } from "react-icons/md"
-import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
-import { BsCashCoin, BsCreditCard } from "react-icons/bs"
+import { MdAddShoppingCart } from "react-icons/md";
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
+import { BsCashCoin, BsCreditCard } from "react-icons/bs";
 import "./Sidebar.css"
+import ShoppingCart from "../ShoppingCart/ShoppingCart"
+import CheckoutForm from "../CheckoutForm/CheckoutForm"
+
+
 
 
 export default function Sidebar() {
@@ -22,6 +26,11 @@ export default function Sidebar() {
 				<BsCashCoin className="sidebar-icon" onClick={handleToggle}/>
 				<BsCreditCard className="sidebar-icon" onClick={handleToggle}/>
 			</div>
+
+			<div className="sidebarInfo">
+			<ShoppingCart />
+			<CheckoutForm />
+			</div>
 		</aside>
-	)
+	) 
 }

@@ -1,21 +1,23 @@
 // app.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "../Navbar/Navbar";
 import Home from "../Home/Home";
 import "./App.css";
 import Sidebar from "../Sidebar/Sidebar";
+import { ProductContext } from "../../state/ProductContext";
 
 export default function App() {
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
+  const { setFilteredProducts, setProducts, products } = useContext(ProductContext)
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await fetch("https://codepath-store-api.herokuapp.com/store");
         const data = await response.json();
+        setFilteredProducts(data.products)
         setProducts(data.products);
-        console.log(data.products);
       } catch (error) {
         console.error("Error fetching products:", error);
       }

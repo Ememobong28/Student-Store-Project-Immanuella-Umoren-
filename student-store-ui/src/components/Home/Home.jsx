@@ -29,7 +29,6 @@ export default function Home({ products }) {
   };
 
   const selectedProductId = useParams().id;
-  console.log("selectedProductId",selectedProductId)
   const selectedProduct = products.find((product) => product.id === parseInt(selectedProductId));
 
 

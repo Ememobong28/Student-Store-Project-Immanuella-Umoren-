@@ -1,50 +1,45 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ProductCard.css';
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import { useState} from 'react';
+import { ProductContext } from '../../state/ProductContext';
 
 
-export default function ProductCard({ product  , removeFromCart, addToCart}) {
-  const [quantity, setQuantity] = useState(0);
+export default function ProductCard({ product }) {
 
-  const handleRemoveFromCart = () => {
-    removeFromCart(product.id, quantity);
-  };
 
-  const handleAddToCart = () => {
-    addToCart(product, quantity);
-  };
+  const { addToCart, removeFromCart } = useContext(ProductContext)
+
+  
 
   return (
-    <div className="product-card">
-      <Link to={`product/${product.id}`}>
+    <div key={product.id} className="product-card">
+      <Link to={`product/${product.id}`} style={{ textDecoration: "none", color: "inherit" }}>
       <img src={product.image} alt={product.name} />
       </Link>
       <div className="quantity-controls">
         <p>{product.name}</p>
-        <HiOutlineMinus
-          className="sign minus"
-          onClick={() => {
-            if (quantity > 0) {
-              setQuantity(quantity - 1);
-              handleRemoveFromCart();
-            }
-          }}
-        />
-        <span className="quantity">{quantity}</span>
-        <HiOutlinePlus
-          className="sign plus"
-          onClick={() => {
-            setQuantity(quantity + 1);
-            handleAddToCart();
-          }}
-        />
+        <div>
+          <HiOutlinePlus className="sign plus" onClick={(event) => { event.preventDefault(); addToCart(product); }}/>
+              <div>
+                <HiOutlineMinus className="sign minus" onClick={(event) => { event.preventDefault(); removeFromCart(product.id); }} />
+              </div>
+        </div>
       </div>
-      <p className='product-price'>${product.price}</p>
+      <p className='product-price'>{formatPrice(product.price)}</p>
       <div className="product-stars">
         <img src="/Stars.png" alt="stars" />
     </div>
     </div>
   );
+}
+
+export function formatPrice(price) {
+  const formattedPrice = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(price);
+
+  return formattedPrice;
 }
