@@ -7,6 +7,34 @@ import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa"
 
 
 export default function Navbar() {
+
+	const handleAboutClick = (e) => {
+		const aboutSection = document.getElementById("about");
+		if (aboutSection) {
+		  aboutSection.scrollIntoView({ behavior: "smooth",
+		  block: "start",
+		  inline: "nearest", });
+		}
+	  };
+
+	const handleContactClick = (e) => {
+		const contactSection = document.getElementById("contact");
+		if (contactSection) {
+		  contactSection.scrollIntoView({ behavior: "smooth",
+		  block: "start",
+		  inline: "nearest", });
+		}
+	  };
+
+	const handleBuynowClick = (e) => {
+		const buynowSection = document.getElementById("buynow");
+		if (buynowSection) {
+		  buynowSection.scrollIntoView({ behavior: "smooth",
+		  block: "start",
+		  inline: "nearest", });
+		}
+	  };
+
   return (
     <nav className="navbar">
       < Logo />
@@ -23,18 +51,18 @@ export default function Navbar() {
 			</div>
 
       <div className="nav-links">
-				<Link to="/" className="nav-link">
+				<Link to ="/" className="nav-link">
 					Home
 				</Link>
-				<Link to="/about" className="nav-link">
+				<a href ="#about" className="nav-link" onClick={handleAboutClick}>
 					About Us
-				</Link>
-				<Link to="/contact" className="nav-link">
+				</a>
+				<a href ="#contact" className="nav-link" onClick={handleContactClick}>
 					Contact Us
-				</Link>
-				<Link to="/contact" className="nav-link">
+				</a>
+				<a href ="#buynow" className="nav-link" onClick={handleBuynowClick}>
 					Buy Now
-				</Link>
+				</a>
 			</div>
     </nav>
   )

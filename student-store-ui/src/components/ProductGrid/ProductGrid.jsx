@@ -12,7 +12,7 @@ const ProductGrid = ({ products, searchResults, selectedCategory}) => {
       : filteredProducts;
 
   return (
-    <div>
+    <div id ="buynow">
        <h3 className="product-heading">Best Selling Products</h3>
       <div className="product-grid">
       {filteredByCategory && filteredByCategory.length > 0 ? (
@@ -21,8 +21,6 @@ const ProductGrid = ({ products, searchResults, selectedCategory}) => {
           key={product.id} 
           product={product}
           showDescription={false}
-          // handleAddItemToCart={handleAddItemToCart}
-          // handleRemoveItemFromCart={handleRemoveItemFromCart}
            />
         ))
       ) : (

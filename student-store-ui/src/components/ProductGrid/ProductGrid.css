@@ -21,6 +21,10 @@
     font-weight: bold;
 }
 
+.quantity-controls.quantity{
+	margin-top: 10px !important;
+}
+
 .product-heading {
     margin-top: 25px;
 }
@@ -28,7 +32,7 @@
 .quantity-controls div {
 	display: flex;
 	position: relative;
-	gap: 10px;
+	gap: 1px;
 	top: 2px;
 	padding: 0.3rem;
 	margin-right: 0.5rem;
@@ -61,6 +65,14 @@
 
 .plus:hover {
 	color: green;
+}
+
+.minus {
+	margin-top: 1px;
+}
+
+.quantity{
+	margin-top: px;
 }
 
 .minus:hover {

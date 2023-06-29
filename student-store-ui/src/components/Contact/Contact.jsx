@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <>
+    <section id ="contact">
     <h3 className="contact-heading">Contact Us</h3>
     <div className="contact-container">
       <div className="contact-info">
@@ -27,7 +27,7 @@ const Contact = () => {
       </div>
       <img className="contact-img" src="/Happy-girl.png" alt="happy person" />
     </div>
-    </>
+    </section>
   )
 }
 

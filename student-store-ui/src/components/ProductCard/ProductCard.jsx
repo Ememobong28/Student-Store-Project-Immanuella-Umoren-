@@ -10,8 +10,22 @@ export default function ProductCard({ product }) {
 
 
   const { addToCart, removeFromCart } = useContext(ProductContext)
+  const [quantity, setQuantity] = useState(0);
 
-  
+  const handleAddToCart = () => {
+    event.preventDefault();
+    addToCart(product);
+    setQuantity(quantity + 1);
+  };
+
+  const handleRemoveFromCart = () => {
+    event.preventDefault();
+    if (quantity > 0) {
+      removeFromCart(product.id);
+      setQuantity(quantity - 1);
+    }
+  };
+
 
   return (
     <div key={product.id} className="product-card">
@@ -21,10 +35,9 @@ export default function ProductCard({ product }) {
       <div className="quantity-controls">
         <p>{product.name}</p>
         <div>
-          <HiOutlinePlus className="sign plus" onClick={(event) => { event.preventDefault(); addToCart(product); }}/>
-              <div>
-                <HiOutlineMinus className="sign minus" onClick={(event) => { event.preventDefault(); removeFromCart(product.id); }} />
-              </div>
+          <HiOutlinePlus className="sign plus" onClick={handleAddToCart}/>
+          <div className='quantity'>{quantity}</div>
+          <HiOutlineMinus className="sign minus" onClick={handleRemoveFromCart} />
         </div>
       </div>
       <p className='product-price'>{formatPrice(product.price)}</p>

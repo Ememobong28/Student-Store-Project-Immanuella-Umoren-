@@ -3,7 +3,7 @@ import './About.css';
 
 export default function About() {
   return (
-    <>
+    <section id= "about">
       <h3 className="about-heading">About</h3>
       <div className="about-container">
         <div className="about-description">
@@ -25,6 +25,6 @@ export default function About() {
           />
         </div>
       </div>
-    </>
+    </section>
   );
 }
