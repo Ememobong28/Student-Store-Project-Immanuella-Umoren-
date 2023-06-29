@@ -8,7 +8,7 @@ const ShoppingCart = () => {
   const { cartItems } = useContext(ProductContext);
 
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const taxes = subtotal * 0.1; // Assuming 10% tax rate
+  const taxes = subtotal * 0.0875; // Assuming 10% tax rate
   const total = subtotal + taxes;
 
   return (
@@ -42,7 +42,7 @@ const ShoppingCart = () => {
               <td className="cart-total-value">{formatPrice(subtotal)}</td>
             </tr>
             <tr>
-              <td className="cart-total-label" colSpan="3">Taxes and Fees</td>
+              <td className="cart-total-label" colSpan="3">Taxes and Fees (8.75%) </td>
               <td className="cart-total-value">{formatPrice(taxes)}</td>
             </tr>
             <tr>

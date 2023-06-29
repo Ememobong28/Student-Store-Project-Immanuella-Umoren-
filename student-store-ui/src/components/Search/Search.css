@@ -54,3 +54,13 @@ input[type="text"] {
 .clearBtn:hover {
   opacity: 0.8;
 }
+
+.help-image{
+  width:90px;
+  margin-left: 60px;
+}
+
+.cart-image{
+  width:150px;
+  margin-left: 90px;
+}

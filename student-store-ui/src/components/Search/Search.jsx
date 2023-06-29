@@ -43,6 +43,9 @@ const SearchBar = ({ handleSearch }) => {
           <button className="searchBtn" type="submit">
             Search
           </button>
+
+          <img className="help-image" src="/Help.png" alt="help" />
+          <img className="cart-image" src="/Cart.png" alt="cart" />
         </div>
       </form>
     </div>

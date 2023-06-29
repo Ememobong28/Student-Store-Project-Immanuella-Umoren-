@@ -3,6 +3,7 @@ import { MdFactCheck } from "react-icons/md";
 import Confetti from "react-dom-confetti";
 import "./CheckoutForm.css";
 import { ProductContext } from "../../state/ProductContext";
+import { formatPrice } from "../ProductCard/ProductCard"; 
 
 const CheckoutForm = () => {
   const { cartItems, setCartItems } = useContext(ProductContext);
@@ -12,11 +13,8 @@ const CheckoutForm = () => {
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [confettiActive, setConfettiActive] = useState(false);
   const [receiptVisible, setReceiptVisible] = useState(false);
-  const [receiptDetails, setReceiptDetails] = useState({
-    subtotal: 0,
-    tax: 0,
-    total: 0,
-  });
+  const [receiptDetails, setReceiptDetails] = useState(false);
+   
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -57,6 +55,24 @@ const CheckoutForm = () => {
       setErrorMessage("");
       console.log("Checkout successful!");
     }
+
+     // Calculate subtotal, tax, and total
+    const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const taxRate = 0.0875; 
+    const tax = subtotal * taxRate;
+    const total = subtotal + tax;
+
+     // Set the receipt details
+    const receipt = {
+      name,
+      email,
+      items: cartItems,
+      subtotal,
+      tax,
+      total,
+      };
+
+
     // Clear the form fields and update cart items after successful checkout
     setName("");
     setCartItems([]);
@@ -71,13 +87,11 @@ const CheckoutForm = () => {
 
     // Display the receipt
     setReceiptVisible(true);
-  };
+    setReceiptDetails(receipt);
+};
+  
 
-  // Calculate subtotal, tax, and total
-  const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const taxRate = 0.1; // 10% tax rate
-  const tax = subtotal * taxRate;
-  const total = subtotal + tax;
+ 
 
   return (
     <div className="checkout-form-container">
@@ -144,13 +158,13 @@ const CheckoutForm = () => {
         <div className="receipt">
           <h3 className="receipt-title">Receipt</h3>
           <div className="receipt-details">
-            <p className="receipt-label">Name: {name}</p>
-            <p className="receipt-label">Email: {email}</p>
+            <p className="receipt-label">Name: {receiptDetails.name}</p>
+            <p className="receipt-label">Email: {receiptDetails.email}</p>
             <p className="receipt-label">Items:</p>
             <ul className="receipt-items">
-              {cartItems.map((item) => (
+              {receiptDetails.items.map((item) => (
                 <li key={item.id}>
-                  {item.name} - Quantity: {item.quantity} - Price: {item.price}
+                  {item.name} - Quantity: {item.quantity} - Price: {formatPrice(item.price)}
                 </li>
               ))}
             </ul>
@@ -163,14 +177,5 @@ const CheckoutForm = () => {
     </div>
   );
 };
-
-export function formatPrice(price) {
-    const formattedPrice = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    }).format(price);
-  
-    return formattedPrice;
-  }
 
 export default CheckoutForm;
