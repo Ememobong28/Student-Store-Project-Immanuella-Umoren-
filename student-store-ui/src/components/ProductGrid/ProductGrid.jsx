@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ProductGrid.css';
 import ProductCard from '../ProductCard/ProductCard';
 
 const ProductGrid = ({ products, searchResults, selectedCategory}) => {
   const filteredProducts = searchResults || products;
 
+
+  
   const filteredByCategory =
     selectedCategory && selectedCategory !== 'All categories'
       ? filteredProducts.filter((product) => product.category === selectedCategory.toLowerCase()

@@ -41,6 +41,12 @@ const CheckoutForm = () => {
     colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
   };
 
+  // Function to handle clearing the cart and restoring it to its initial state
+  const clearCart = () => {
+    setCartItems([]);
+    setReceiptVisible(false);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -89,10 +95,8 @@ const CheckoutForm = () => {
     setReceiptVisible(true);
     setReceiptDetails(receipt);
 };
+
   
-
- 
-
   return (
     <div className="checkout-form-container">
       <h3 className="form-title">Checkout Form</h3>
@@ -156,7 +160,7 @@ const CheckoutForm = () => {
        {/* Receipt section */}
        {receiptVisible && (
         <div className="receipt">
-          <h3 className="receipt-title">Receipt</h3>
+          <h3 className="receipt-title">Receipt🤩</h3>
           <div className="receipt-details">
             <p className="receipt-label">Name: {receiptDetails.name}</p>
             <p className="receipt-label">Email: {receiptDetails.email}</p>
@@ -173,6 +177,28 @@ const CheckoutForm = () => {
             <p className="receipt-label">Total: {formatPrice(receiptDetails.total)}</p>
           </div>
         </div>
+      )}
+
+      {/* Exit button */}
+      {receiptVisible && (
+        <button
+        className="exit-button"
+        style={{
+          backgroundColor: "#e53935",
+          color: "white",
+          padding: "10px 20px",
+          border: "none",
+          borderRadius: "4px",
+          fontSize: "16px",
+          cursor: "pointer",
+          marginTop: "25px",
+          postion: "center",
+          fontWeight: "bold"
+        }}
+        onClick={clearCart}
+      >
+        Exit
+      </button>
       )}
     </div>
   );
