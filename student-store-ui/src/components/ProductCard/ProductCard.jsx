@@ -26,8 +26,6 @@ export default function ProductCard({ product }) {
     }
   };
 
-
-
   return (
     <div key={product.id} className="product-card">
       <Link to={`product/${product.id}`} style={{ textDecoration: "none", color: "inherit" }}>

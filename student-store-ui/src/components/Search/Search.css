@@ -35,7 +35,7 @@ input[type="text"] {
 
 .clearBtn {
   position: absolute;
-  right: 70px;
+  margin-left: 57%;
   background-color: #ff4f4b;
   color: white;
   border: none;
