@@ -8,7 +8,7 @@ const ShoppingCart = () => {
   const { cartItems } = useContext(ProductContext);
 
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const taxes = subtotal * 0.0875; // Assuming 10% tax rate
+  const taxes = subtotal * 0.0875; 
   const total = subtotal + taxes;
 
   return (

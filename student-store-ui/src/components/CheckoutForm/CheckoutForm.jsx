@@ -77,8 +77,7 @@ const CheckoutForm = () => {
       tax,
       total,
       };
-
-
+      
     // Clear the form fields and update cart items after successful checkout
     setName("");
     setCartItems([]);

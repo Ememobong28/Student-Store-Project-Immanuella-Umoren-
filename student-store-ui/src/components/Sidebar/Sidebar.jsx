@@ -6,9 +6,6 @@ import "./Sidebar.css"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
 
-
-
-
 export default function Sidebar() {
 	const [isOpen, setIsOpen] = useState(false)
 

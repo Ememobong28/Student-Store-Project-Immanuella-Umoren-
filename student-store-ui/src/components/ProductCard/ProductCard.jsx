@@ -7,8 +7,6 @@ import { ProductContext } from '../../state/ProductContext';
 
 
 export default function ProductCard({ product }) {
-
-
   const { addToCart, removeFromCart } = useContext(ProductContext)
   const [quantity, setQuantity] = useState(0);
 
